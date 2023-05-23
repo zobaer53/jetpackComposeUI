@@ -1,0 +1,13 @@
+#Thu May 18 14:57:57 BDT 2023
+path.3=8/classes.dex
+path.2=1/classes.dex
+path.1=0/classes.dex
+path.0=classes.dex
+base.3=G\:\\Zobaer\\UIjetpackCompose\\ManagingState\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\8\\classes.dex
+base.2=G\:\\Zobaer\\UIjetpackCompose\\ManagingState\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\1\\classes.dex
+base.1=G\:\\Zobaer\\UIjetpackCompose\\ManagingState\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
+base.0=G\:\\Zobaer\\UIjetpackCompose\\ManagingState\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
+renamed.3=classes4.dex
+renamed.2=classes3.dex
+renamed.1=classes2.dex
+renamed.0=classes.dex
