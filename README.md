@@ -1,4 +1,4 @@
-<h1 align="center">Tomato leaf disease prediction machine learning app </h1>
+<h1 align="center">jetpackComposeUI </h1>
 
 
 - ### Tech Stack used:
@@ -27,5 +27,33 @@
 		</table>
 	</center>
   
-## About Project:
-Simple android app that takes a image of tomato leaf and predicts if it is healthy or diseased.
+
+# My Awesome Repository
+
+This repository contains code examples and projects related to various topics in Android development.
+
+## Table of Contents
+
+- [EventAndStylingEx](./EventAndStylingEx)
+  - Description: events and styling added
+
+- [LittleLemon Navigation Reading](./LittleLemon%20Navigation%20Reading%20initial)
+  - Description: Initial code for LittleLemon Navigation Reading
+
+- [LittleLemon Tabbed Navigation Reading](./LittleLemon%20Tabbed%20Navigation%20Reading%20initial)
+  - Description: Initial code for LittleLemon Tabbed Navigation Reading
+
+- [ManagingState](./ManagingState)
+  - Description: Code examples and projects related to managing state in Android
+
+## Usage
+
+1. Clone the repository:
+
+2. Navigate to the desired folder by clicking on the hyperlinks above.
+
+3. Explore the code and project files within each folder.
+
+
+
+
