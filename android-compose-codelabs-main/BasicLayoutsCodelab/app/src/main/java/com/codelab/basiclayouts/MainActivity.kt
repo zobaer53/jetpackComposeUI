@@ -112,7 +112,7 @@ fun AlignYourBodyElement(
     modifier: Modifier = Modifier,@DrawableRes drawable: Int,
     @StringRes text: Int
 ) {
-    // Implement composable here
+    
     Column(horizontalAlignment = Alignment.CenterHorizontally,
         modifier = modifier
     ) {
@@ -145,7 +145,7 @@ fun FavoriteCollectionCard(
     @DrawableRes drawable:Int,
     @StringRes text: Int
 ) {
-    // Implement composable here
+    
  Surface(shape = MaterialTheme.shapes.small,
      modifier = modifier) {
 
@@ -162,7 +162,7 @@ fun FavoriteCollectionCard(
  }
 }
 
-// Step: Align your body row - Arrangements
+
 @Composable
 fun AlignYourBodyRow(
     modifier: Modifier = Modifier
@@ -182,7 +182,7 @@ fun AlignYourBodyRow(
 fun FavoriteCollectionsGrid(
     modifier: Modifier = Modifier
 ) {
-    // Implement composable here
+  
     LazyHorizontalGrid(rows = GridCells.Fixed(2),
         contentPadding = PaddingValues(horizontal = 16.dp),
         horizontalArrangement = Arrangement.spacedBy(16.dp),
@@ -202,7 +202,7 @@ fun HomeSection(
     modifier: Modifier = Modifier,
     content:@Composable () -> Unit
 ) {
-    // Implement composable here
+   
     Column(modifier) {
         Text(text = stringResource(id = title),
         style = MaterialTheme.typography.h2,
@@ -217,7 +217,7 @@ fun HomeSection(
 // Step: Home screen - Scrolling
 @Composable
 fun HomeScreen(modifier: Modifier = Modifier) {
-    // Implement composable here
+   
     Column(
         modifier
             .padding(vertical = 16.dp)
@@ -237,7 +237,7 @@ fun HomeScreen(modifier: Modifier = Modifier) {
 // Step: Bottom navigation - Material
 @Composable
 private fun SootheBottomNavigation(modifier: Modifier = Modifier) {
-    // Implement composable here
+    
     BottomNavigation(modifier, backgroundColor = MaterialTheme.colors.background) {
         BottomNavigationItem(
             selected = true,
@@ -260,7 +260,7 @@ private fun SootheBottomNavigation(modifier: Modifier = Modifier) {
 // Step: MySoothe App - Scaffold
 @Composable
 fun MySootheApp() {
-    // Implement composable here
+   
     MySootheTheme { Scaffold(bottomBar = { SootheBottomNavigation() }) {paddingValues ->
     HomeScreen(Modifier.padding(paddingValues))
         
