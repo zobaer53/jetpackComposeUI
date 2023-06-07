@@ -30,21 +30,21 @@ object DishRepository {
             "Grilled Fish",
             "Fish marinated in fresh orange and lemon juice. Grilled with orange and lemon wedges.",
             19.99,
-            R.drawable.bruschetta
+            R.drawable.grilledfish
         ),
         Dish(
             5,
             "Pasta",
             "Penne with fried aubergines, cherry tomatoes, tomato sauce, fresh chilli, garlic, basil & salted ricotta cheese.",
             8.99,
-            R.drawable.bruschetta
+            R.drawable.pasta
         ),
         Dish(
             6,
             "Lasagne",
             "Oven-baked layers of pasta stuffed with Bolognese sauce, béchamel sauce, ham, Parmesan & mozzarella cheese .",
             7.99,
-            R.drawable.bruschetta
+            R.drawable.lasagne
         )
     )
 

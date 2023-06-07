@@ -21,6 +21,9 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
+import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
+import com.bumptech.glide.integration.compose.GlideImage
+import com.example.littlelemon.ui.theme.LittleLemonColor
 
 @Composable
 fun LowerPanel(navController: NavHostController, dishes: List<Dish> = listOf()) {
@@ -50,28 +53,30 @@ fun WeeklySpecialCard() {
     }
 }
 
-@OptIn(ExperimentalMaterialApi::class)
+@OptIn(ExperimentalMaterialApi::class, ExperimentalGlideComposeApi::class)
 @Composable
 fun MenuDish(navController: NavHostController? = null, dish: Dish) {
     Card(onClick = {
         Log.d("AAA", "Click ${dish.id}")
         navController?.navigate(DishDetails.route + "/${dish.id}")
     }) {
-        Row(modifier = Modifier.fillMaxWidth()
+        Row(modifier = Modifier
+            .fillMaxWidth()
             .padding(8.dp)) {
             Column {
                 Text(text = dish.name,
-                style =MaterialTheme.typography.h3
+                style =MaterialTheme.typography.h6
                 )
                 Text(text = dish.description,
                 style = MaterialTheme.typography.body1,
-                modifier = Modifier.fillMaxWidth(0.75F)
+                modifier = Modifier
+                    .fillMaxWidth(0.75F)
                     .padding(top = 5.dp, bottom = 5.dp)
                 )
                 Text(text = "${dish.price}",
                 style = MaterialTheme.typography.body2)
             }
-            Image(painter = painterResource(id = dish.imageResource),
+            GlideImage(model = dish.imageResource,
                 contentDescription = "",
                 modifier = Modifier.clip(RoundedCornerShape(10.dp))
             )
@@ -82,5 +87,6 @@ fun MenuDish(navController: NavHostController? = null, dish: Dish) {
     Divider(
         modifier = Modifier.padding(start = 8.dp, end = 8.dp),
         thickness = 1.dp,
+        color = LittleLemonColor.yellow
     )
 }
