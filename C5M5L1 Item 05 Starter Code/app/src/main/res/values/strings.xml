@@ -6,4 +6,5 @@
     <string name="order_button_text">Order Take Away</string>
     <string name="weekly_special">Weekly Special</string>
     <string name="add_for">Add for</string>
+    <string name="title_activity_login">LoginActivity</string>
 </resources>

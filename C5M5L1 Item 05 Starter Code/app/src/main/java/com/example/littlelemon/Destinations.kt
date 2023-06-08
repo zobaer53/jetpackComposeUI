@@ -7,6 +7,9 @@ interface Destinations {
 object Home : Destinations {
     override val route = "Home"
 }
+object Login : Destinations {
+    override val route = "Login"
+}
 
 object DishDetails : Destinations {
     override val route = "Menu"
