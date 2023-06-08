@@ -21,53 +21,58 @@ import com.example.littlelemon.ui.theme.LittleLemonColor
 
 @Composable
 fun UpperPanel() {
-    Column(
-        modifier = Modifier
-            .background(LittleLemonColor.green)
-            .padding(start = 12.dp, end = 12.dp, top = 16.dp, bottom = 16.dp)
-    ) {
-        Text(
-            text = stringResource(id = R.string.title),
-            fontSize = 40.sp,
-            fontWeight = FontWeight.Bold,
-            color = LittleLemonColor.yellow
-        )
-        Text(
-            text = stringResource(id = R.string.location),
-            fontSize = 24.sp,
-            color = LittleLemonColor.cloud
-        )
-        Row(
-            horizontalArrangement = Arrangement.SpaceBetween,
+        Column(
             modifier = Modifier
-                .padding(top = 20.dp)
+                .clip(shape = RoundedCornerShape(15.dp, 15.dp, 15.dp, 15.dp))
+                .background(LittleLemonColor.green)
+                .padding(start = 12.dp, end = 12.dp, top = 16.dp, bottom = 16.dp)
+
+
         ) {
             Text(
-                text = stringResource(id = R.string.description),
-                style = MaterialTheme.typography.body1,
-                modifier = Modifier
-                    .padding(bottom = 28.dp, end = 20.dp)
-                    .fillMaxWidth(0.6f),
+                text = stringResource(id = R.string.title),
+                fontSize = 40.sp,
+                fontWeight = FontWeight.Bold,
+                color = LittleLemonColor.yellow
+            )
+            Text(
+                text = stringResource(id = R.string.location),
+                fontSize = 24.sp,
                 color = LittleLemonColor.cloud
             )
-            Image(
-                painter = painterResource(id = R.drawable.upperpanelimage),
-                contentDescription = "Upper Panel Image",
-                modifier = Modifier.clip(RoundedCornerShape(10.dp))
-            )
-        }
-        Button(
-            onClick = { },
-            colors = ButtonDefaults.buttonColors(
-                backgroundColor = LittleLemonColor.yellow
-            )
-        ) {
-            Text(
-                text = stringResource(id = R.string.order_button_text)
-            )
+            Row(
+                horizontalArrangement = Arrangement.SpaceBetween,
+                modifier = Modifier
+                    .padding(top = 20.dp)
+            ) {
+                Text(
+                    text = stringResource(id = R.string.description),
+                    style = MaterialTheme.typography.body1,
+                    modifier = Modifier
+                        .padding(bottom = 28.dp, end = 20.dp)
+                        .fillMaxWidth(0.6f),
+                    color = LittleLemonColor.cloud
+                )
+                Image(
+                    painter = painterResource(id = R.drawable.upperpanelimage),
+                    contentDescription = "Upper Panel Image",
+                    modifier = Modifier.clip(RoundedCornerShape(10.dp))
+                )
+            }
+            Button(
+                onClick = { },
+                colors = ButtonDefaults.buttonColors(
+                    backgroundColor = LittleLemonColor.yellow
+                ),
+                modifier = Modifier
+                    .clip(shape = RoundedCornerShape(25.dp))
+            ) {
+                Text(
+                    text = stringResource(id = R.string.order_button_text)
+                )
+            }
         }
     }
-}
 
 @Preview(showBackground = true)
 @Composable
