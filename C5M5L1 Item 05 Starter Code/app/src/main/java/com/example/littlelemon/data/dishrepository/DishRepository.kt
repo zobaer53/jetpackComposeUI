@@ -1,6 +1,7 @@
-package com.example.littlelemon
+package com.example.littlelemon.data.dishrepository
 
 import androidx.annotation.DrawableRes
+import com.example.littlelemon.R
 
 object DishRepository {
     val dishes = listOf(

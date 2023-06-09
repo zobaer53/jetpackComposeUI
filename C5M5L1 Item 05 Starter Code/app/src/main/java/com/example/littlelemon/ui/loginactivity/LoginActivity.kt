@@ -1,4 +1,4 @@
-package com.example.littlelemon
+package com.example.littlelemon.ui.loginactivity
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,17 +6,24 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.littlelemon.Login
-import com.example.littlelemon.MainActivity
+import androidx.compose.ui.unit.dp
 import com.example.littlelemon.R
+import com.example.littlelemon.ui.mainactivity.MainActivity
+import com.example.littlelemon.ui.theme.LittleLemonColor
 import com.example.littlelemon.ui.theme.LittleLemonTheme
 
 class LoginActivity : ComponentActivity() {
@@ -39,23 +46,35 @@ class LoginActivity : ComponentActivity() {
 @Composable
 fun LoginScreen(){
     val context = LocalContext.current
+    var userNameTextField by remember {
+        mutableStateOf("")
+    }
+    var userPasswordTextField by remember {
+        mutableStateOf("")
+    }
+
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
         Image(
             painter = painterResource(
-                id = R.drawable.littlelemonlogo),
-            contentDescription = "Logo Image"
+                id = R.drawable.littlelemonlogo
+            ),
+            contentDescription = "Logo Image",
+            modifier = Modifier.padding(bottom = 10.dp)
         )
+
         TextField(
-            value = "",
-            onValueChange = {},
+            value = userNameTextField,
+            onValueChange = {userNameTextField = it},
             label = { Text(text = "Username") },
+            modifier = Modifier.padding(bottom = 10.dp),
+
         )
         TextField(
-            value = "",
-            onValueChange = {},
+            value = userPasswordTextField,
+            onValueChange = {userPasswordTextField = it},
             label = { Text(text = "Password") },
         )
         Button(
@@ -63,12 +82,13 @@ fun LoginScreen(){
                 context.startActivity(Intent(context, MainActivity::class.java))
             },
             colors = ButtonDefaults.buttonColors(
-                Color(0xFF495E57)
-            )
+                backgroundColor = LittleLemonColor.yellow
+            ),
+            modifier = Modifier.padding(top = 10.dp)
+                .clip(shape = RoundedCornerShape(5.dp))
         ) {
             Text(
-                text = "Login",
-                color = Color(0xFFEDEFEE)
+                text = "Login"
             )
         }
     }

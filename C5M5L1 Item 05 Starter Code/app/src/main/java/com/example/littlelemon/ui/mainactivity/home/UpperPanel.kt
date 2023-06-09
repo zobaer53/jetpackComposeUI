@@ -1,4 +1,4 @@
-package com.example.littlelemon
+package com.example.littlelemon.ui.mainactivity.home
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -17,13 +17,14 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.littlelemon.R
 import com.example.littlelemon.ui.theme.LittleLemonColor
 
 @Composable
 fun UpperPanel() {
         Column(
             modifier = Modifier
-                .clip(shape = RoundedCornerShape(15.dp, 15.dp, 15.dp, 15.dp))
+                .clip(shape = RoundedCornerShape(0.dp, 0.dp, 0.dp, 0.dp))
                 .background(LittleLemonColor.green)
                 .padding(start = 12.dp, end = 12.dp, top = 16.dp, bottom = 16.dp)
 
@@ -65,7 +66,7 @@ fun UpperPanel() {
                     backgroundColor = LittleLemonColor.yellow
                 ),
                 modifier = Modifier
-                    .clip(shape = RoundedCornerShape(25.dp))
+                    .clip(shape = RoundedCornerShape(5.dp))
             ) {
                 Text(
                     text = stringResource(id = R.string.order_button_text)

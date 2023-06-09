@@ -1,4 +1,4 @@
-package com.example.littlelemon
+package com.example.littlelemon.ui.topbar
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
@@ -14,6 +14,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.littlelemon.R
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 

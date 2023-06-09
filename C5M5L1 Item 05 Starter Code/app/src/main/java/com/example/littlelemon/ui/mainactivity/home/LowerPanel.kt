@@ -1,28 +1,24 @@
-package com.example.littlelemon
+package com.example.littlelemon.ui.mainactivity.home
 
 import android.util.Log
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
-import androidx.compose.material.Typography
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
 import com.bumptech.glide.integration.compose.GlideImage
+import com.example.littlelemon.R
+import com.example.littlelemon.data.dishrepository.Dish
 import com.example.littlelemon.ui.theme.LittleLemonColor
 
 @Composable
@@ -58,7 +54,7 @@ fun WeeklySpecialCard() {
 fun MenuDish(navController: NavHostController? = null, dish: Dish) {
     Card(onClick = {
         Log.d("AAA", "Click ${dish.id}")
-        navController?.navigate(DishDetails.route + "/${dish.id}")
+        navController?.navigate(com.example.littlelemon.destinations.DishDetails.route + "/${dish.id}")
     }) {
         Row(modifier = Modifier
             .fillMaxWidth()
