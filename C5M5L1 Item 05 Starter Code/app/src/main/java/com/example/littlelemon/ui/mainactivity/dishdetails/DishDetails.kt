@@ -1,5 +1,6 @@
 package com.example.littlelemon.ui.mainactivity.dishdetails
 
+import android.content.Context
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Button
@@ -17,6 +18,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
 import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
 import com.bumptech.glide.integration.compose.GlideImage
 import com.example.littlelemon.data.dishrepository.DishRepository
@@ -26,12 +28,12 @@ import com.example.littlelemon.ui.theme.LittleLemonColor
 
 @OptIn(ExperimentalGlideComposeApi::class)
 @Composable
-fun DishDetails(id: Int) {
+fun DishDetails(id: Int, context: Context) {
     val dish = requireNotNull(DishRepository.getDish(id))
     Column(verticalArrangement = Arrangement.spacedBy(10.dp),
         modifier = Modifier
        ) {
-        TopAppBar()
+        TopAppBar(null,null, context = context)
         GlideImage(model = dish.imageResource,
             contentDescription = "Dish image",
             modifier = Modifier.fillMaxWidth()
@@ -98,8 +100,3 @@ fun Counter() {
     }
 }
 
-@Preview
-@Composable
-fun DishDetailsPreview() {
-    DishDetails(id = 1)
-}

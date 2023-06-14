@@ -1,5 +1,6 @@
 package com.example.littlelemon.ui.loginactivity
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -80,6 +81,7 @@ fun LoginScreen(){
         Button(
             onClick = {
                 context.startActivity(Intent(context, MainActivity::class.java))
+                (context as? Activity)?.finish()
             },
             colors = ButtonDefaults.buttonColors(
                 backgroundColor = LittleLemonColor.yellow

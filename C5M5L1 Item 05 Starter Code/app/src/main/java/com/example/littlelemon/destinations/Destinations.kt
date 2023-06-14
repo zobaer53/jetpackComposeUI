@@ -9,6 +9,10 @@ object DishDetails : Destinations {
     override val route = "Menu"
     const val argDishId = "dishId"
 }
+object CartItem : Destinations {
+    override val route = "Cart"
+ /*   const val argDishId = "dishId"*/
+}
 
 interface DestinationsTabbed {
     val route: String

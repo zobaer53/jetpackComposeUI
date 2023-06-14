@@ -13,15 +13,15 @@ import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight.Companion.Bold
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.example.littlelemon.data.dishrepository.DishRepository
-import com.example.littlelemon.ui.mainactivity.home.LowerPanel
 import com.example.littlelemon.ui.mainactivity.home.MenuDish
+import com.example.littlelemon.ui.theme.LittleLemonColor
+import com.example.littlelemon.ui.theme.LittleLemonTheme
 
 val Categories = listOf(
     "Lunch",
@@ -65,23 +65,18 @@ private fun UpperPanelMenuPage() {
             .fillMaxWidth()
             .padding(start = 12.dp, end = 12.dp, top = 16.dp, bottom = 16.dp)
     ) {
-        Text(
-            text = "Little Lemon",
-            fontSize = 40.sp,
-            fontWeight = Bold,
-            color = Color(0xFFF4CE14)
-        )
 
+        Text(
+            text = "ORDER FOR TAKEAWAY",
+            fontSize = 24.sp,
+            fontWeight = Bold,
+            textAlign = TextAlign.Center,
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(8.dp)
+        , color = LittleLemonColor.cloud
+        )
     }
-    Text(
-        text = "ORDER FOR TAKEAWAY",
-        fontSize = 24.sp,
-        fontWeight = Bold,
-        textAlign = TextAlign.Center,
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(8.dp)
-    )
 }
 @Composable
 fun MenuCategory(category: String) {

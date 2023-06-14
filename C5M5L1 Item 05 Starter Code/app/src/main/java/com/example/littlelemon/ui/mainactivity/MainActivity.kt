@@ -14,8 +14,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavController
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
@@ -39,13 +39,15 @@ class MainActivity : ComponentActivity() {
 
         setContent {
             LittleLemonTheme {
+                val context = LocalContext.current
                 val navController = rememberNavController()
-                Scaffold(bottomBar = { MyBottomNavigation(navController = navController) }) {
+                Scaffold(
+                    bottomBar = { MyBottomNavigation(navController = navController) }) {
                     Box(Modifier.padding(it)){
                 }
                     NavHost(navController = navController, startDestination = Home.route) {
                         composable(Home.route) {
-                            HomeScreen(navController)
+                            HomeScreen(navController, context = context)
                         }
                         composable(MenuList.route) {
                             MenuListScreen(navController)
@@ -61,7 +63,7 @@ class MainActivity : ComponentActivity() {
                         ) {
                             val id =
                                 requireNotNull(it.arguments?.getInt(DishDetails.argDishId)) { "Dish id is null" }
-                            DishDetails(id)
+                            DishDetails(id,context)
                         }
                     }
                 }
