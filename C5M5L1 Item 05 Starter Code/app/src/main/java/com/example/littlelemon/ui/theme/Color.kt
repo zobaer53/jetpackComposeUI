@@ -4,6 +4,7 @@ import androidx.compose.ui.graphics.Color
 
 object LittleLemonColor {
     val green = Color(0xFF495E57)
+    val greenSoft = Color(0xFF7A9779)
     val yellow = Color(0xFFF4CE14)
     val pink = Color(0xFFFBDABB)
     val cloud = Color(0xFFEDEFEE)

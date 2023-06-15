@@ -11,7 +11,6 @@ object DishDetails : Destinations {
 }
 object CartItem : Destinations {
     override val route = "Cart"
- /*   const val argDishId = "dishId"*/
 }
 
 interface DestinationsTabbed {

@@ -16,7 +16,6 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
@@ -28,12 +27,13 @@ import com.example.littlelemon.ui.theme.LittleLemonColor
 
 @OptIn(ExperimentalGlideComposeApi::class)
 @Composable
-fun DishDetails(id: Int, context: Context) {
+fun DishDetails(id: Int, context: Context, navController: NavHostController) {
     val dish = requireNotNull(DishRepository.getDish(id))
+    val coroutineScope = rememberCoroutineScope()
     Column(verticalArrangement = Arrangement.spacedBy(10.dp),
         modifier = Modifier
        ) {
-        TopAppBar(null,null, context = context)
+        TopAppBar(null, coroutineScope, navController)
         GlideImage(model = dish.imageResource,
             contentDescription = "Dish image",
             modifier = Modifier.fillMaxWidth()

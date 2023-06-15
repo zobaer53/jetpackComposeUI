@@ -1,6 +1,7 @@
 package com.example.littlelemon.ui.mainactivity.menulist
 
 
+import android.content.Context
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -11,6 +12,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight.Companion.Bold
@@ -21,7 +23,6 @@ import androidx.navigation.NavHostController
 import com.example.littlelemon.data.dishrepository.DishRepository
 import com.example.littlelemon.ui.mainactivity.home.MenuDish
 import com.example.littlelemon.ui.theme.LittleLemonColor
-import com.example.littlelemon.ui.theme.LittleLemonTheme
 
 val Categories = listOf(
     "Lunch",
@@ -32,10 +33,15 @@ val Categories = listOf(
 )
 
 @Composable
-fun MenuListScreen(navController: NavHostController) {
+fun MenuListScreen(navController: NavHostController, context: Context) {
+    val coroutineScope = rememberCoroutineScope()
 
     Column {
-        com.example.littlelemon.ui.topbar.TopAppBar()
+        com.example.littlelemon.ui.topbar.TopAppBar(
+            null,
+            coroutineScope,
+            navController
+        )
         UpperPanelMenuPage()
 
         Column {

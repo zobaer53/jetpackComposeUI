@@ -1,9 +1,7 @@
 package com.example.littlelemon.ui.mainactivity.cartitem
 
 import android.annotation.SuppressLint
-import android.app.Activity
 import android.content.Context
-import android.content.Intent
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -15,20 +13,18 @@ import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
 import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
 import com.bumptech.glide.integration.compose.GlideImage
 import com.example.littlelemon.R
-import com.example.littlelemon.ui.mainactivity.MainActivity
 import com.example.littlelemon.ui.theme.LittleLemonColor
-import org.intellij.lang.annotations.PrintFormat
 
 data class FoodItem(val name: String, val imageResId: Int, val price: String)
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter", "UnrememberedMutableState")
 @Composable
-fun CartScreen(context: Context) {
+fun CartScreen(context: Context, navController: NavHostController) {
     val cartItems = mutableStateListOf(
         FoodItem("Pizza", R.drawable.bruschetta, "$10"),
         FoodItem("Burger", R.drawable.pasta, "$8"),
@@ -41,9 +37,9 @@ fun CartScreen(context: Context) {
                 title = { Text(text = "Cart", color = LittleLemonColor.yellow)},
                 navigationIcon = {
                     IconButton(onClick = {
-                        val intent = Intent(context, MainActivity::class.java)
-                        context.startActivity(intent)
-                        (context as? Activity)?.finish()
+
+                        navController.popBackStack()
+
                     }) {
                         Icon(Icons.Default.ArrowBack, contentDescription = "Back")
                     }
@@ -92,12 +88,6 @@ fun CartItem(foodItem: FoodItem) {
                 modifier = Modifier.size(80.dp),
                 contentScale = ContentScale.Crop
             )
-           /* Image(
-                painter = painterResource(id = foodItem.imageResId),
-                contentDescription = null,
-                modifier = Modifier.size(80.dp),
-                contentScale = ContentScale.Crop
-            )*/
             Column(modifier = Modifier.padding(start = 16.dp)) {
                 Text(text = foodItem.name, style = MaterialTheme.typography.h6)
                 Text(text = "Price: ${foodItem.price}", style = MaterialTheme.typography.body1)

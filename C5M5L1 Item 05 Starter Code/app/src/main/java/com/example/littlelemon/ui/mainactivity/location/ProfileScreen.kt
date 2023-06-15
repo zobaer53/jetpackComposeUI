@@ -1,6 +1,7 @@
 package com.example.littlelemon.ui.mainactivity.location
 
 import android.annotation.SuppressLint
+import android.content.Context
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -10,34 +11,40 @@ import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.vector.ImageVector
-import androidx.compose.ui.res.imageResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
 import com.example.littlelemon.R
 import com.example.littlelemon.ui.theme.LittleLemonColor
 import com.example.littlelemon.ui.theme.LittleLemonTheme
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
-fun ProfileScreen() {
+fun ProfileScreen(context: Context,navController:NavHostController) {
+    val coroutineScope = rememberCoroutineScope()
     LittleLemonTheme() {
         Scaffold(
             topBar = {
-                com.example.littlelemon.ui.topbar.TopAppBar()
+                com.example.littlelemon.ui.topbar.TopAppBar(
+                    null,
+                    coroutineScope,
+                    navController
+                )
             }
         ) {
             Column(
 
 
             ) {
-                Column(modifier = Modifier.background(LittleLemonColor.green)
+                Column(modifier = Modifier
+                    .background(LittleLemonColor.green)
                     .padding(horizontal = 16.dp, vertical = 8.dp)) {
                     ProfileHeader()
                     Spacer(modifier = Modifier.height(16.dp))
@@ -58,7 +65,7 @@ fun ProfileHeader() {
         modifier = Modifier.fillMaxWidth()
     ) {
         Image(
-            painter = painterResource(id = R.drawable.person_icon),
+            painter = painterResource(id = R.drawable.dp),
             contentDescription = "Profile Picture",
             modifier = Modifier
                 .size(100.dp)
@@ -66,11 +73,11 @@ fun ProfileHeader() {
         )
         Spacer(modifier = Modifier.width(16.dp))
         Column {
-            Text(text = "John Doe", fontWeight = FontWeight.Bold,color = LittleLemonColor.yellow, fontSize = 39.sp)
+            Text(text = "Zobaer Hossain", fontWeight = FontWeight.Bold,color = LittleLemonColor.yellow, fontSize = 39.sp)
             Spacer(modifier = Modifier.height(4.dp))
-            Text(text = "johndoe@example.com", color = LittleLemonColor.cloud)
+            Text(text = "hossain.zobaer11858@gmail.com", color = LittleLemonColor.cloud)
             Spacer(modifier = Modifier.height(4.dp))
-            Text(text = "Los Angeles, CA", color = LittleLemonColor.cloud)
+            Text(text = "Dhaka, BD", color = LittleLemonColor.cloud)
         }
     }
 }
@@ -148,11 +155,3 @@ val recipeList = listOf(
     "Chocolate Chip Cookies",
     "Greek Salad"
 )
-
-
-
-@Composable
-@Preview(showBackground = true)
-fun LocationScreenPreview() {
-    ProfileScreen()
-}
