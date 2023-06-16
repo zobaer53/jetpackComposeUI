@@ -58,9 +58,9 @@ To use the Little Lemon Android app, follow these steps:
 
 Clone the repository from GitHub:
 
-git clone https://github.com/your-username/little-lemon.git
+git clone https://github.com/zobaer53/jetpackComposeUI.git
 
-Open the project in Android Studio.
+Open the project in Android Studio and open finalProject folder.
 
 Build and run the app on an Android device or emulator.
 
