@@ -28,9 +28,7 @@
 	</center>
   
 
-# My Awesome Repository
 
-This repository contains code examples and projects related to various topics in Android development.
 
 ## Table of Contents
 
