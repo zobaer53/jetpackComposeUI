@@ -1,36 +1,29 @@
-# Educational Application
-Technology and tools used for the projects :
-1. Java
-2. Firebase
-3. SQLite & RoomDB
+# Little lemon Food App
+
+# Course
+Create the User Interface in Android Studio
+by Meta (Coursera)
+
+Link- https://www.coursera.org/learn/create-the-user-interface-android-studio
+
+# Technology and tools used for the projects :
+1. Kotlin
+2. Compose UI
+3. material design
 4. Android studio
 
-Features:
-1. Students can create an account with firebase authentication
-2. App contains subjects from classes 1-12 along with chapter wise long questions and solution 
-3. Students can give chapter wise quiz test
-4. App contains advanced tutorials like web development, mobile development, etc
-5. Students can buy tutorials
-6. RazorPay payment gateway integrated
-7. Admin can easily modify app from firebase without any need for an update
 
 # Video
-https://user-images.githubusercontent.com/61627836/184885220-c36026d0-b05d-471d-a506-5c96fa02d778.mp4
+https://github.com/zobaer53/jetpackComposeUI/assets/61627836/618f9f15-abd8-4316-8479-fd2a4e5137c1
+
 
 # ScreenShoots
 <p float="left">
- <img src="https://github.com/zobaer53/Educational-App/blob/master/1.jpg" alt="Girl in a jacket" width="150" height="300">
-  <img src="https://github.com/zobaer53/Educational-App/blob/master/2.jpg" alt="Girl in a jacket" width="150" height="300">
-   <img src="https://github.com/zobaer53/Educational-App/blob/master/3.jpg" alt="Girl in a jacket" width="150" height="300">
-    <img src="https://github.com/zobaer53/Educational-App/blob/master/4.jpg" alt="Girl in a jacket" width="150" height="300">
-     <img src="https://github.com/zobaer53/Educational-App/blob/master/5.jpg" alt="Girl in a jacket" width="150" height="300">
-      <img src="https://github.com/zobaer53/Educational-App/blob/master/6.jpg" alt="Girl in a jacket" width="150" height="300">
-       <img src="https://github.com/zobaer53/Educational-App/blob/master/7.jpg" alt="Girl in a jacket" width="150" height="300">
-        <img src="https://github.com/zobaer53/Educational-App/blob/master/8.jpg" alt="Girl in a jacket" width="150" height="300">
-         <img src="https://github.com/zobaer53/Educational-App/blob/master/9.jpg" alt="Girl in a jacket" width="150" height="300">
-          <img src="https://github.com/zobaer53/Educational-App/blob/master/10.jpg" alt="Girl in a jacket" width="150" height="300">
-           <img src="https://github.com/zobaer53/Educational-App/blob/master/11.jpg" alt="Girl in a jacket" width="150" height="300">
-            <img src="https://github.com/zobaer53/Educational-App/blob/master/12.jpg" alt="Girl in a jacket"width="150" height="300">
-             <img src="https://github.com/zobaer53/Educational-App/blob/master/13.jpg" alt="Girl in a jacket" width="150" height="300">
-              <img src="https://github.com/zobaer53/Educational-App/blob/master/14.jpg" alt="Girl in a jacket" width="150" height="300">
+ <img src="https://github.com/zobaer53/jetpackComposeUI/blob/master/FinalProject/assets/Screenshot_20230616-191231.png" alt="Girl in a jacket" width="150" height="300">
+  <img src="https://github.com/zobaer53/jetpackComposeUI/blob/master/FinalProject/assets/Screenshot_20230616-191247.png" alt="Girl in a jacket" width="150" height="300">
+   <img src="https://github.com/zobaer53/jetpackComposeUI/blob/master/FinalProject/assets/Screenshot_20230616-190251.png" alt="Girl in a jacket" width="150" height="300">
+    <img src="https://github.com/zobaer53/jetpackComposeUI/blob/master/FinalProject/assets/Screenshot_20230616-191256.png" alt="Girl in a jacket" width="150" height="300">
+     <img src="https://github.com/zobaer53/jetpackComposeUI/blob/master/FinalProject/assets/Screenshot_20230616-191327.png" alt="Girl in a jacket" width="150" height="300">
+      <img src="https://github.com/zobaer53/jetpackComposeUI/blob/master/FinalProject/assets/Screenshot_20230616-191331.png" alt="Girl in a jacket" width="150" height="300">
+       <img src="https://github.com/zobaer53/jetpackComposeUI/blob/master/FinalProject/assets/Screenshot_20230616-191337.png" alt="Girl in a jacket" width="150" height="300">
 </p>
