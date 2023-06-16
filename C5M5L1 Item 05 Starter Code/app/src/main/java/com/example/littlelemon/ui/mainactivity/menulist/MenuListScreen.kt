@@ -1,6 +1,7 @@
 package com.example.littlelemon.ui.mainactivity.menulist
 
 
+import android.annotation.SuppressLint
 import android.content.Context
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
@@ -12,7 +13,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.MutableState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight.Companion.Bold
@@ -21,8 +22,10 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.example.littlelemon.data.dishrepository.DishRepository
+import com.example.littlelemon.ui.mainactivity.bottomnav.MyBottomNavigation
 import com.example.littlelemon.ui.mainactivity.home.MenuDish
 import com.example.littlelemon.ui.theme.LittleLemonColor
+import kotlinx.coroutines.CoroutineScope
 
 val Categories = listOf(
     "Lunch",
@@ -32,36 +35,53 @@ val Categories = listOf(
     "Specials"
 )
 
+@SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
-fun MenuListScreen(navController: NavHostController, context: Context) {
-    val coroutineScope = rememberCoroutineScope()
-
-    Column {
-        com.example.littlelemon.ui.topbar.TopAppBar(
-            null,
-            coroutineScope,
-            navController
-        )
-        UpperPanelMenuPage()
-
-        Column {
-            LazyRow {
-                items(Categories) { category ->
-                    MenuCategory(category)
-                }
+fun MenuListScreen(
+    navController: NavHostController,
+    context: Context,
+    coroutineScope: CoroutineScope,
+    scaffoldState: ScaffoldState,
+    selectedIndex: MutableState<Int>
+) {
+        Scaffold(
+            scaffoldState = scaffoldState,
+            bottomBar = {  if (scaffoldState.drawerState.isClosed) {
+                MyBottomNavigation(navController = navController, selectedIndex = selectedIndex)
+            }},
+            topBar = {
+                com.example.littlelemon.ui.topbar.TopAppBar(
+                    null,
+                    coroutineScope,
+                    navController
+                )
             }
-            Divider(
-                modifier = Modifier.padding(8.dp),
-                color = Color.Gray,
-                thickness = 1.dp
-            )
-            LazyColumn {
-                items(DishRepository.dishes) { Dish ->
-                    MenuDish(navController,Dish)
+        ){
+            Column {
+                UpperPanelMenuPage()
+
+                Column {
+                    LazyRow {
+                        items(Categories) { category ->
+                            MenuCategory(category)
+                        }
+                    }
+                    Divider(
+                        modifier = Modifier.padding(8.dp),
+                        color = Color.Gray,
+                        thickness = 1.dp
+                    )
+                    LazyColumn {
+                        items(DishRepository.dishes) { Dish ->
+                            MenuDish(navController,Dish)
+                        }
+                    }
                 }
             }
         }
-    }
+
+
+
 }
 @Composable
 private fun UpperPanelMenuPage() {

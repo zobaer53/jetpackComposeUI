@@ -1,7 +1,6 @@
 package com.example.littlelemon.ui.mainactivity.cartitem
 
 import android.annotation.SuppressLint
-import android.content.Context
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -18,19 +17,19 @@ import androidx.navigation.NavHostController
 import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
 import com.bumptech.glide.integration.compose.GlideImage
 import com.example.littlelemon.R
+import com.example.littlelemon.ui.mainactivity.dishdetails.Counter
 import com.example.littlelemon.ui.theme.LittleLemonColor
 
 data class FoodItem(val name: String, val imageResId: Int, val price: String)
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter", "UnrememberedMutableState")
 @Composable
-fun CartScreen(context: Context, navController: NavHostController) {
+fun CartScreen(navController: NavHostController) {
     val cartItems = mutableStateListOf(
         FoodItem("Pizza", R.drawable.bruschetta, "$10"),
         FoodItem("Burger", R.drawable.pasta, "$8"),
         FoodItem("Pasta", R.drawable.greeksalad, "$12")
     )
-
     Scaffold(
         topBar = {
             TopAppBar(
@@ -92,6 +91,7 @@ fun CartItem(foodItem: FoodItem) {
                 Text(text = foodItem.name, style = MaterialTheme.typography.h6)
                 Text(text = "Price: ${foodItem.price}", style = MaterialTheme.typography.body1)
             }
+            Counter()
         }
     }
 }

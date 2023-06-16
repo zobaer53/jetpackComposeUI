@@ -15,7 +15,6 @@
         <activity
             android:name=".ui.splashscreen.IntroScreenActivity"
             android:exported="true"
-            android:label="@string/title_activity_intro_splash"
             android:theme="@style/Theme.LittleLemon">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
